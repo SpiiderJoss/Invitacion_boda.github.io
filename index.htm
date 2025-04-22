@@ -960,7 +960,7 @@
           </div>
           <!--End container-->
         </div>
-        
+
         <div class="curved-decoration">
           <svg
             width="100%"
@@ -1553,16 +1553,18 @@
           <!--End row-->
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-5 col-md-6">
-              <form method="post">
+              <form id="form" name="form" onsubmit="sendToWhatsApp(event)">
                 <div class="form-group">
                   <label>Nombre</label>
                   <input
                     name="name"
                     type="text"
                     class="form-control form-control-lg"
-                    placeholder="Your name"
+                    placeholder="Tu nombre"
+                    required
                   />
                 </div>
+
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group mb-1">
@@ -1574,12 +1576,14 @@
                       <div class="custom-control custom-radio">
                         <input
                           type="radio"
-                          id="atttending-yes"
-                          name="atttending"
+                          id="attending-yes"
+                          name="attending"
                           class="custom-control-input"
+                          value="Sí asistiré"
+                          required
                         />
-                        <label class="custom-control-label" for="atttending-yes"
-                          >Si, asistiremos</label
+                        <label class="custom-control-label" for="attending-yes"
+                          >Sí, asistiremos</label
                         >
                       </div>
                     </div>
@@ -1589,17 +1593,19 @@
                       <div class="custom-control custom-radio">
                         <input
                           type="radio"
-                          id="atttending-no"
-                          name="atttending"
+                          id="attending-no"
+                          name="attending"
                           class="custom-control-input"
+                          value="No podré asistir"
                         />
-                        <label class="custom-control-label" for="atttending-no"
+                        <label class="custom-control-label" for="attending-no"
                           >Perdona, no puedo asistir</label
                         >
                       </div>
                     </div>
                   </div>
                 </div>
+
                 <div class="form-group text-center">
                   <button
                     class="btn btn-lg btn-block btn-primary"
@@ -1949,6 +1955,27 @@
     <script src="js/script.js"></script>
     <!-- Google analytics -->
     <!-- End google analytics -->
+    <script>
+      function sendToWhatsApp(event) {
+        event.preventDefault();
+
+        // Obtener datos del formulario
+        const name = document.querySelector('input[name="name"]').value;
+        const attending = document.querySelector(
+          'input[name="attending"]:checked'
+        ).value;
+
+        // Mensaje predefinido (personaliza con tus datos)
+        const phoneNumber = "4432676695"; // Reemplaza con tu número (en formato internacional sin +)
+        const message = `¡Hola! Soy *${name}* y quiero confirmar que *${attending}* a tu boda. ¡Felicidades! 🎉`;
+
+        // Redireccionar a WhatsApp
+        window.open(
+          `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+          "_blank"
+        );
+      }
+    </script>
   </body>
 </html>
 <!-- 
