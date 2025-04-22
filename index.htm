@@ -27,6 +27,24 @@
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
+  .current-atras {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .grande {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 6rem;
+    font-weight: 700;
+  }
+  @media (widht <550px) {
+    .current-atras {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 </style>
 
 <html lang="en">
@@ -648,6 +666,35 @@
               ></path>
             </g>
           </svg>
+        </div>
+      </section>
+      <section id="wedding" class="spacer-one-top-lg">
+        <div class="container spacer-one-bottom-lg">
+          <div class="row justify-content-center">
+            <div class="col">
+              <div class="text-center mb-5 pb-5">
+                <h1 class="display-4 mb-0">Cuenta regresiva</h1>
+                <div class="current-atras">
+                  <div class="col">
+                    <p class="grande" id="dias">00</p>
+                    <p class="chico">días</p>
+                  </div>
+                  <div class="col">
+                    <p class="grande" id="Horas">00</p>
+                    <p class="chico">Horas</p>
+                  </div>
+                  <div class="col">
+                    <p class="grande" id="minutos">00</p>
+                    <p class="chico">Minutos</p>
+                  </div>
+                  <div class="col">
+                    <p class="grande" id="Segundos">00</p>
+                    <p class="chico">Segundos</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section id="wedding" class="spacer-one-top-lg">
@@ -2026,25 +2073,18 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.countdown.min.js"></script>
     <script src="js/placeholders.min.js"></script>
-    <script src="js/instafeed.min.js"></script>
     <script src="js/script.js"></script>
-    <!-- Google analytics -->
-    <!-- End google analytics -->
+    <script src="js/Cuenta.js"></script>
     <script>
+
       function sendToWhatsApp(event) {
         event.preventDefault();
-
-        // Obtener datos del formulario
         const name = document.querySelector('input[name="name"]').value;
         const attending = document.querySelector(
           'input[name="attending"]:checked'
         ).value;
-
-        // Mensaje predefinido (personaliza con tus datos)
-        const phoneNumber = "4432676695"; // Reemplaza con tu número (en formato internacional sin +)
+        const phoneNumber = "4432676695";
         const message = `¡Hola! Soy *${name}* y quiero confirmar que *${attending}* a tu boda. ¡Felicidades! 🎉`;
-
-        // Redireccionar a WhatsApp
         window.open(
           `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
           "_blank"
