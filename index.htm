@@ -33,18 +33,55 @@
     align-items: center;
     justify-content: center;
     margin-top: 50px;
-  }
-  .grande {
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+.grande {
     font-family: "Bricolage Grotesque", sans-serif;
     font-size: 6rem;
     font-weight: 700;
-  }
-  @media (widht <550px) {
-    .current-atras {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    line-height: 1; /* Mejora el espaciado vertical */
+}
+
+.chico {
+    font-size: 1rem; /* Asegura un tamaño legible */
+    margin-top: 0.5rem; /* Espacio entre número y texto */
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .grande {
+        font-size: 4rem; /* Reduce el tamaño en tablets */
     }
-  }
+}
+
+@media (max-width: 550px) {
+    .current-atras {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem; /* Espacio entre elementos */
+    }
+    
+    .grande {
+        font-size: 3rem; /* Tamaño más pequeño para móviles */
+    }
+    
+    .col {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra el contenido */
+    }
+}
+
+@media (max-width: 400px) {
+    .grande {
+        font-size: 2.5rem; /* Tamaño extra pequeño para móviles muy pequeños */
+    }
+    
+    .chico {
+        font-size: 0.9rem;
+    }
+}
 </style>
 
 <html lang="en">
@@ -169,7 +206,7 @@
       <!--End header-->
       <!--Hero section-->
       <section class="gradient-overlay gradient-overlay-dark">
-        <img class="bg-image" src="assets/img/1.jpg" alt="" />
+        <img class="bg-image" src="assets/img/portada1.png" alt="" />
         <div class="container">
           <!--row-->
           <div
@@ -299,7 +336,7 @@
                     mask="url(#mask)"
                     width="981"
                     height="885"
-                    xlink:href="assets/img/mask-lg.jpg"
+                    xlink:href="assets/img/casados1.jpg"
                   ></image>
                   <g>
                     <path
@@ -391,7 +428,7 @@
                       ></path>
                     </svg>
                   </div>
-                  <div>
+                  <div style="margin-left: 2rem;">
                     <h5 class="mb-0">Nos conocimos</h5>
                     <span class="small text-primary">Septiembre 2013</span>
                   </div>
@@ -417,7 +454,7 @@
                       ></path>
                     </svg>
                   </div>
-                  <div>
+                  <div style="margin-left: 2rem;">
                     <h5 class="mb-0">Primera cita</h5>
                     <span class="small text-primary"
                       >25 de Febrero de 2015</span
@@ -457,7 +494,7 @@
                           x="10%"
                           y="10%"
                           xlink:href="assets/img/primera-cita.jpeg"
-                          preserveAspectRatio="xMidYMid slice"
+                          preserveAspectRatio="xMidYMid meet"
                         />
 
                         <!-- Borde opcional para el corazón -->
@@ -495,7 +532,7 @@
                       ></path>
                     </svg>
                   </div>
-                  <div>
+                  <div style="margin-left: 2rem;">
                     <h5 class="mb-0">Boda al civil</h5>
                     <span class="small text-primary"
                       >8 de Diciembre de 2016</span
@@ -534,7 +571,7 @@
                           x="10%"
                           y="10%"
                           xlink:href="assets/img/boda-civil.jpeg"
-                          preserveAspectRatio="xMidYMid slice"
+                          preserveAspectRatio="xMidYMid meet"
                         />
 
                         <!-- Borde opcional para el corazón -->
@@ -572,7 +609,7 @@
                       ></path>
                     </svg>
                   </div>
-                  <div>
+                  <div style="margin-left: 2rem;">
                     <h5 class="mb-0">Tuvimos a Santiago</h5>
                     <span class="small text-primary">September 2018</span>
                   </div>
@@ -609,7 +646,7 @@
                           x="10%"
                           y="10%"
                           xlink:href="assets/img/santi.jpeg"
-                          preserveAspectRatio="xMidYMid slice"
+                          preserveAspectRatio="xMidYMid meet"
                         />
 
                         <!-- Borde opcional para el corazón -->
@@ -647,7 +684,7 @@
                       ></path>
                     </svg>
                   </div>
-                  <div>
+                  <div style="margin-left: 2rem;">
                     <h5 class="mb-0">Tuvimos a Mariel</h5>
                     <span class="small text-primary">September 2018</span>
                   </div>
@@ -684,7 +721,82 @@
                           x="10%"
                           y="10%"
                           xlink:href="assets/img/mariel.jpeg"
-                          preserveAspectRatio="xMidYMid slice"
+                          preserveAspectRatio="xMidYMid meet"
+                        />
+
+                        <!-- Borde opcional para el corazón -->
+                        <path
+                          fill="none"
+                          stroke-width="3"
+                          d="M150,50 
+                          C100,0 0,40 0,100 
+                          C0,170 150,250 150,250 
+                          C150,250 300,170 300,100 
+                          C300,40 200,0 150,50z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="story-icon bg-icon-primary">
+                    <svg
+                      version="1.1"
+                      class="icon-svg"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      viewbox="0 0 107 93"
+                      enable-background="new 0 0 107 93"
+                      xml:space="preserve"
+                    >
+                      <path
+                        fill="#E25D5D"
+                        d="M53.6825,9.4436L53.6825,9.4436C41.6532-2.4793,22.2392-2.5,10.1866,9.4439
+                                    c-12.1565,12.0471-12.07,31.7375-0.0219,43.8819l35.08,35.3601c4.5697,4.6061,12.0081,4.6357,16.6142,0.0661l35.1704-34.8918
+                                    c12.1523-12.056,12.4179-32.0464,0.3787-44.2154C85.3917-2.5013,65.8078-2.5857,53.6825,9.4436z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div style="margin-left: 2rem;">
+                    <h5 class="mb-0">Nos casaremos por la Iglesia</h5>
+                    <span class="small text-primary">21 Junio 2025</span>
+                  </div>
+                  <div class="ml-lg-5">
+                    <div
+                      class="svg-mask-container px-3"
+                      style="width: 250px; height: 230px"
+                    >
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 300 280"
+                        preserveAspectRatio="xMidYMid meet"
+                      >
+                        <defs>
+                          <mask id="heart-mask">
+                            <!-- Corazón más grande y centrado -->
+                            <path
+                              fill="#FFFFFF"
+                              d="M150,50 
+                              C100,0 0,40 0,100 
+                              C0,170 150,250 150,250 
+                              C150,250 300,170 300,100 
+                              C300,40 200,0 150,50z"
+                            />
+                          </mask>
+                        </defs>
+
+                        <!-- Imagen que ocupará todo el espacio disponible -->
+                        <image
+                          mask="url(#heart-mask)"
+                          width="80%"
+                          height="80%"
+                          x="10%"
+                          y="10%"
+                          xlink:href="assets/img/anillos2.png"
+                          preserveAspectRatio="xMidYMid meet"
                         />
 
                         <!-- Borde opcional para el corazón -->
@@ -788,7 +900,7 @@
           <div class="row">
             <div class="col-md-6 col-lg-4 d-flex mb-4 mb-lg-0 display-state">
               <div class="card card-icon-2 card-body justify-content-between">
-                <img class="bg-image" src="assets/img/1.jpg" alt="" />
+                <img class="bg-image" src="assets/img/casados3.jpg" alt="" />
               </div>
             </div>
             <div class="col-md-6 col-lg-4 d-flex mb-4 mb-lg-0">
@@ -1481,9 +1593,229 @@
                     <image
                       mask="url(#heart-mask)"
                       width="100%"
+                      height="140%"
+                      xlink:href="assets/img/madrina_velacion.jpg"
+                      preserveAspectRatio="xMidYMid meet"
+                    />
+
+                    <!-- Borde opcional para el corazón -->
+                    <path
+                      fill="none"
+                      stroke-width="3"
+                      d="M150,50 
+                       C100,0 0,40 0,100 
+                       C0,170 150,250 150,250 
+                       C150,250 300,170 300,100 
+                       C300,40 200,0 150,50z"
+                    />
+                  </svg>
+                </div>
+                <div class="mt-4 text-center">
+                  <h5 class="mb-0">Graciela Ocampo Arreola</h5>
+                  <span class="small text-muted">Madrina de Velación</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex flex-column align-items-center">
+              <div class="col-md-4 d-flex flex-column align-items-center">
+                <div class="px-5 mb-4 pb-4">
+                  <div
+                    class="svg-mask-container px-3"
+                    style="width: 250px; height: 230px"
+                  >
+                    <svg
+                      width="100%"
+                      height="100%"
+                      viewBox="0 0 300 280"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <defs>
+                        <mask id="heart-mask">
+                          <!-- Corazón más grande y centrado -->
+                          <path
+                            fill="#FFFFFF"
+                            d="M150,50 
+                               C100,0 0,40 0,100 
+                               C0,170 150,250 150,250 
+                               C150,250 300,170 300,100 
+                               C300,40 200,0 150,50z"
+                          />
+                        </mask>
+                      </defs>
+
+                      <!-- Imagen que ocupará todo el espacio disponible -->
+                      <image
+                        mask="url(#heart-mask)"
+                        width="100%"
+                        height="120%"
+                        xlink:href="assets/img/padrino_velacion.jpg"
+                        preserveAspectRatio="xMidYMid meet"
+                      />
+
+                      <!-- Borde opcional para el corazón -->
+                      <path
+                        fill="none"
+                        stroke-width="3"
+                        d="M150,50 
+                           C100,0 0,40 0,100 
+                           C0,170 150,250 150,250 
+                           C150,250 300,170 300,100 
+                           C300,40 200,0 150,50z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="mt-4 text-center">
+                    <h5 class="mb-0">Francisco García  Zenteno</h5>
+                    <span class="small text-muted">Padrino de Velación</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-4 d-flex flex-column align-items-center">
+              <div class="px-5 mb-4 pb-4">
+                <div
+                  class="svg-mask-container px-3"
+                  style="width: 250px; height: 230px"
+                >
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 300 280"
+                    preserveAspectRatio="xMidYMid meet"
+                  >
+                    <defs>
+                      <mask id="heart-mask">
+                        <!-- Corazón más grande y centrado -->
+                        <path
+                          fill="#FFFFFF"
+                          d="M150,50 
+                           C100,0 0,40 0,100 
+                           C0,170 150,250 150,250 
+                           C150,250 300,170 300,100 
+                           C300,40 200,0 150,50z"
+                        />
+                      </mask>
+                    </defs>
+
+                    <!-- Imagen que ocupará todo el espacio disponible -->
+                    <image
+                      mask="url(#heart-mask)"
+                      width="100%"
+                      height="140%"
+                      xlink:href="assets/img/madrina_anillos.jpg"
+                      preserveAspectRatio="xMidYMid meet"
+                    />
+
+                    <!-- Borde opcional para el corazón -->
+                    <path
+                      fill="none"
+                      stroke-width="3"
+                      d="M150,50 
+                       C100,0 0,40 0,100 
+                       C0,170 150,250 150,250 
+                       C150,250 300,170 300,100 
+                       C300,40 200,0 150,50z"
+                    />
+                  </svg>
+                </div>
+                <div class="mt-4 text-center">
+                  <h5 class="mb-0">Alejandra Alegría Avalos</h5>
+                  <span class="small text-muted">Madrina de Anillos</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex flex-column align-items-center">
+              <div class="col-md-4 d-flex flex-column align-items-center">
+                <div class="px-5 mb-4 pb-4">
+                  <div
+                    class="svg-mask-container px-3"
+                    style="width: 250px; height: 230px"
+                  >
+                    <svg
+                      width="100%"
+                      height="100%"
+                      viewBox="0 0 300 280"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <defs>
+                        <mask id="heart-mask">
+                          <!-- Corazón más grande y centrado -->
+                          <path
+                            fill="#FFFFFF"
+                            d="M150,50 
+                               C100,0 0,40 0,100 
+                               C0,170 150,250 150,250 
+                               C150,250 300,170 300,100 
+                               C300,40 200,0 150,50z"
+                          />
+                        </mask>
+                      </defs>
+
+                      <!-- Imagen que ocupará todo el espacio disponible -->
+                      <image
+                        mask="url(#heart-mask)"
+                        width="100%"
+                        height="150%"
+                        xlink:href="assets/img/padrino_anillos.jpg"
+                        preserveAspectRatio="xMidYMid meet"
+                      />
+
+                      <!-- Borde opcional para el corazón -->
+                      <path
+                        fill="none"
+                        stroke-width="3"
+                        d="M150,50 
+                           C100,0 0,40 0,100 
+                           C0,170 150,250 150,250 
+                           C150,250 300,170 300,100 
+                           C300,40 200,0 150,50z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="mt-4 text-center">
+                    <h5 class="mb-0">Francisco Silva Calixto</h5>
+                    <span class="small text-muted">Padrino de Anillos</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-4 d-flex flex-column align-items-center">
+              <div class="px-5 mb-4 pb-4">
+                <div
+                  class="svg-mask-container px-3"
+                  style="width: 250px; height: 230px"
+                >
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 300 280"
+                    preserveAspectRatio="xMidYMid meet"
+                  >
+                    <defs>
+                      <mask id="heart-mask">
+                        <!-- Corazón más grande y centrado -->
+                        <path
+                          fill="#FFFFFF"
+                          d="M150,50 
+                           C100,0 0,40 0,100 
+                           C0,170 150,250 150,250 
+                           C150,250 300,170 300,100 
+                           C300,40 200,0 150,50z"
+                        />
+                      </mask>
+                    </defs>
+
+                    <!-- Imagen que ocupará todo el espacio disponible -->
+                    <image
+                      mask="url(#heart-mask)"
+                      width="100%"
                       height="100%"
                       xlink:href="assets/img/madrina-lazo.jpeg"
-                      preserveAspectRatio="xMidYMid slice"
+                      preserveAspectRatio="xMidYMid meet"
                     />
 
                     <!-- Borde opcional para el corazón -->
@@ -1537,7 +1869,7 @@
                         width="100%"
                         height="100%"
                         xlink:href="assets/img/padrino-lazo.jpeg"
-                        preserveAspectRatio="xMidYMid slice"
+                        preserveAspectRatio="xMidYMid meet"
                       />
 
                       <!-- Borde opcional para el corazón -->
@@ -1579,23 +1911,23 @@
                         <path
                           fill="#FFFFFF"
                           d="M150,50 
-                           C100,0 0,40 0,100 
-                           C0,170 150,250 150,250 
-                           C150,250 300,170 300,100 
-                           C300,40 200,0 150,50z"
+                          C100,0 0,40 0,100 
+                          C0,170 150,250 150,250 
+                          C150,250 300,170 300,100 
+                          C300,40 200,0 150,50z"
                         />
                       </mask>
                     </defs>
-
                     <!-- Imagen que ocupará todo el espacio disponible -->
-                    <image
-                      mask="url(#heart-mask)"
-                      width="100%"
-                      height="100%"
-                      xlink:href="assets/img/madrina-lazo.jpeg"
-                      preserveAspectRatio="xMidYMid slice"
-                    />
-
+                      <g transform="scale(1.1)">
+                        <image
+                          mask="url(#heart-mask)"
+                          width="100%"
+                          height="100%"
+                          xlink:href="assets/img/madrina_arras.jpg"
+                          preserveAspectRatio="xMidYMid meet"
+                        />
+                      </g>
                     <!-- Borde opcional para el corazón -->
                     <path
                       fill="none"
@@ -1609,27 +1941,19 @@
                   </svg>
                 </div>
                 <div class="mt-4 text-center">
-                  <h5 class="mb-0">Anabel Zavala Bedolla</h5>
-                  <span class="small text-muted">Madrina de Lazo</span>
+                  <h5 class="mb-0">Maria Guadalupe Ruiz González</h5>
+                  <span class="small text-muted">Madrina de Arras</span>
                 </div>
               </div>
             </div>
             <div class="col-md-4 d-flex flex-column align-items-center">
               <div class="col-md-4 d-flex flex-column align-items-center">
                 <div class="px-5 mb-4 pb-4">
-                  <div
-                    class="svg-mask-container px-3"
-                    style="width: 250px; height: 230px"
-                  >
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 300 280"
-                      preserveAspectRatio="xMidYMid meet"
-                    >
+                  <div class="svg-mask-container px-3" style="width: 250px; height: 230px">
+                    <svg width="100%" height="100%" viewBox="0 0 300 280" preserveAspectRatio="xMidYMid meet">
                       <defs>
                         <mask id="heart-mask">
-                          <!-- Corazón más grande y centrado -->
+                          <!-- Corazón grande y centrado -->
                           <path
                             fill="#FFFFFF"
                             d="M150,50 
@@ -1640,20 +1964,21 @@
                           />
                         </mask>
                       </defs>
-
-                      <!-- Imagen que ocupará todo el espacio disponible -->
+                  
+                      <!-- Imagen centrada en el corazón -->
                       <image
                         mask="url(#heart-mask)"
                         width="100%"
                         height="100%"
-                        xlink:href="assets/img/padrino-lazo.jpeg"
-                        preserveAspectRatio="xMidYMid slice"
+                        xlink:href="assets/img/padrino_arras.jpg"
+                        preserveAspectRatio="xMidYMid meet"
                       />
-
-                      <!-- Borde opcional para el corazón -->
+                  
+                      <!-- Borde opcional del corazón -->
                       <path
                         fill="none"
                         stroke-width="3"
+                        stroke="#000" <!-- (agregué color para que veas el borde, opcional) -->
                         d="M150,50 
                            C100,0 0,40 0,100 
                            C0,170 150,250 150,250 
@@ -1661,10 +1986,10 @@
                            C300,40 200,0 150,50z"
                       />
                     </svg>
-                  </div>
+                  </div>                  
                   <div class="mt-4 text-center">
-                    <h5 class="mb-0">Fernando Montalván Rosales</h5>
-                    <span class="small text-muted">Padrino de Lazo</span>
+                    <h5 class="mb-0">Alfredo  Sosa Rojas</h5>
+                    <span class="small text-muted">Padrino de Arras</span>
                   </div>
                 </div>
               </div>
