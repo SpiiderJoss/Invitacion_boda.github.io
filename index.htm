@@ -1024,7 +1024,7 @@
                   </svg>
                 </div>
                 <h5 class="mb-0">Misa</h5>
-                <h6 class="mb-5">17:00hrs - 18:00hrs (6pm-7pm)</h6>
+                <h6 class="mb-5">6:00 pm - 7:00 pm</h6>
                 <p class="text-align-center">
                   Parroquia de la Merced <br />Av Francisco I. Madero Pte 720<br />Centro
                   histórico de Morelia
@@ -2401,10 +2401,8 @@
       function sendToWhatsApp(event) {
         event.preventDefault();
         const name = document.querySelector('input[name="name"]').value;
-        const attending = document.querySelector(
-          'input[name="attending"]:checked'
-        ).value;
-        const phoneNumber = "4432676695";
+        const attending = document.querySelector('input[name="attending"]:checked').value;
+        const phoneNumber = "19282471198";
         const message = `¡Hola! Soy *${name}* y quiero confirmar que *${attending}* a tu boda. ¡Felicidades! 🎉`;
         window.open(
           `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
