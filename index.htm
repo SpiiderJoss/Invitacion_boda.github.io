@@ -82,11 +82,29 @@
         font-size: 0.9rem;
     }
 }
+ #btnMusica {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #e63946;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 9999;
+    transition: background-color 0.3s ease;
+  }
+
+  #btnMusica:hover {
+    background-color: #c92c3a;
+  }
 </style>
 
 <html lang="en">
   <head>
-    <audio id="backgroundMusic" autoplay loop>
+    <audio id="backgroundMusic" loop>
       <source src="assets/img/cancion.mp3" type="audio/mpeg" />
       Tu navegador no soporta audio HTML5.
     </audio>
@@ -2391,7 +2409,8 @@
         </svg>
       </a>
       <!-- End to the top -->
-    </div>
+        <button id="btnMusica" onclick="iniciarMusica()" style="color:white ;">▶</button>
+      </div>
     <!-- End wrapper-->
     <!--Javascript-->
     <script src="js/jquery-1.12.4.min.js"></script>
@@ -2403,13 +2422,12 @@
     <script src="js/script.js"></script>
     <script src="js/Cuenta.js"></script>
     <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        const audio = new Audio('assets/img/cancion.mp3');
+      function iniciarMusica() {
+        console.log("reproduciendo")
+        const audio = document.getElementById("backgroundMusic");
         audio.loop = true;
-        audio.play().catch(error => {
-          console.warn("Autoplay bloqueado por el navegador:", error);
-        });
-      });
+        audio.play().catch(e => console.log("Autoplay falló:", e));
+      }
       function sendToWhatsApp(event) {
         event.preventDefault();
         const name = document.querySelector('input[name="name"]').value;
