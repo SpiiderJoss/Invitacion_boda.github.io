@@ -96,7 +96,7 @@
     <title>Nuestra Boda, Cesar & Merced</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Css -->
+    <!-- Css -->git fet
     <link
       href="css/bootstrap.css"
       rel="stylesheet"
@@ -2403,6 +2403,13 @@
     <script src="js/script.js"></script>
     <script src="js/Cuenta.js"></script>
     <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const audio = new Audio('assets/img/cancion.mp3');
+        audio.loop = true;
+        audio.play().catch(error => {
+          console.warn("Autoplay bloqueado por el navegador:", error);
+        });
+      });
       function sendToWhatsApp(event) {
         event.preventDefault();
         const name = document.querySelector('input[name="name"]').value;
